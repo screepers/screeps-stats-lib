@@ -1,0 +1,24 @@
+{
+  "name": "screeps-stats",
+  "version": "0.1.0",
+  "description": "Script to enhance stats collection for screeps-stats",
+  "main": "./dist/index.js",
+  "keywords": [
+    "screeps",
+    "stats"
+  ],
+  "scripts": {
+    "postinstall": "./node_modules/.bin/typings install",
+    "start": "./node_modules/.bin/gulp build"
+  },
+  "author": "Screepers",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-tslint": "^6.0.2",
+    "gulp-typescript": "^2.13.6",
+    "screeps-typescript-declarations": "^4.2.1",
+    "tslint": "^3.14.0",
+    "typings": "^1.3.2"
+  }
+}
