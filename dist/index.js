@@ -235,4 +235,10 @@ var ScreepsStats = (function () {
     };
     return ScreepsStats;
 }());
-module.exports = ScreepsStats;
+exports.ScreepsStats = ScreepsStats;
+var TickStat = (function () {
+    function TickStat() {
+    }
+    return TickStat;
+}());
+exports.TickStat = TickStat;

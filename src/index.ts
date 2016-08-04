@@ -1,10 +1,15 @@
-/// <reference path="./stats.d.ts"/>
 
-// This is a bad way to do it but i'm not sure how to get lodash to play nice without
-// importing it into the script, which could cause issues when running on screeps.
+// ===
+// This is a terrible workaround for lodash already being imported
+// into the env within Screeps.
+
+// Uncomment the below for dev auto hinting:
+// import * as _ from "lodash";
+// Uncomment the below for dist:
 declare var _: any;
+// ===
 
-class ScreepsStats {
+export class ScreepsStats {
     private username: string = null;
 
     constructor() {
@@ -55,7 +60,7 @@ class ScreepsStats {
 
     public runBuiltinStats() {
         this.clean();
-        let stats: ITickStat = {
+        let stats: TickStat = {
             cpu: {
                 bucket: Game.cpu.bucket,
                 limit: Game.cpu.limit,
@@ -173,7 +178,7 @@ class ScreepsStats {
         Memory.___screeps_stats[Game.time] = stats;
     }
 
-    public roomExpensive(stats: ITickStat, room: Room) {
+    public roomExpensive(stats: TickStat, room: Room) {
         // Source Mining
         _.defaults(stats, {
             minerals: {
@@ -253,7 +258,7 @@ class ScreepsStats {
         }
     }
 
-    public getStats(json: boolean): string | { [tick: number]: ITickStat } {
+    public getStats(json: boolean): string | { [tick: number]: TickStat } {
         if (json) {
             return JSON.stringify(Memory.___screeps_stats);
         } else {
@@ -261,7 +266,7 @@ class ScreepsStats {
         }
     }
 
-    public getStatsForTick(tick: number): ITickStat {
+    public getStatsForTick(tick: number): TickStat {
         let stats = Memory.___screeps_stats[tick];
         if (!stats) {
             return null;
@@ -271,4 +276,15 @@ class ScreepsStats {
     }
 }
 
-export = ScreepsStats;
+export class TickStat {
+    public cpu: any;
+    public gcl: any;
+    public minerals: { [id: string]: any };
+    public rooms: { [roomName: string]: any };
+    public spawns: { [roomName: string]: any };
+    public sources: { [id: string]: any };
+    public storage: { [id: string]: any };
+    public terminal: { [id: string]: any };
+    public tick: number;
+    public time: string;
+}
