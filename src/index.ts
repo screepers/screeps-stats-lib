@@ -1,6 +1,4 @@
 /// <reference path="./stats.d.ts"/>
-/// <reference path="../typings/index.d.ts"/>
-/// <reference path="../node_modules/screeps-typescript-declarations/dist/screeps.d.ts"/>
 
 // This is a bad way to do it but i'm not sure how to get lodash to play nice without
 // importing it into the script, which could cause issues when running on screeps.
