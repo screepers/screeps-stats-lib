@@ -202,7 +202,7 @@ var ScreepsStats = (function () {
         stats.rooms[room.name].creeps = room.find(FIND_MY_CREEPS).length;
     };
     ScreepsStats.prototype.removeTick = function (tick) {
-        if (typeof tick === "array") {
+        if (typeof tick === "object") {
             for (var _i = 0, tick_1 = tick; _i < tick_1.length; _i++) {
                 var tickItem = tick_1[_i];
                 this.removeTick(tickItem);

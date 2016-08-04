@@ -1,6 +1,6 @@
 {
   "name": "screeps-stats",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Script to enhance stats collection for screeps-stats",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -13,7 +13,7 @@
     "start": "./node_modules/.bin/gulp build"
   },
   "author": "Screepers",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-tslint": "^6.0.2",

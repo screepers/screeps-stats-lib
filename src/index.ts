@@ -242,7 +242,7 @@ export class ScreepsStats {
     }
 
     public removeTick(tick: number | number[]): string {
-        if (typeof tick === "array") {
+        if (typeof tick === "object") {
             for (let tickItem of tick) {
                 this.removeTick(tickItem);
             }

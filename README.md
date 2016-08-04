@@ -12,6 +12,10 @@ When the stats collection service picks stats up from the server it will erase t
 is running only a few ticks worth of data will be stored. If the stats service fails, stats will be collected
 for up to 20 ticks, at which point the oldest data will be removed.
 
+## Authors
+
+Original Javascript version by Robert Hafner <tedivm@tedivm.com>
+TypeScript port by Erik Davidson <erik@erikd.org>
 
 
 ## Installation
@@ -28,7 +32,7 @@ server will use this class to delete ticks that it has finished processing.
 
 TypeScript example:
 ```typescript
-import ScreepsStats from "screeps-stats";
+import {ScreepsStats} from "screeps-stats";
 global.Stats = new ScreepsStats();
 
 module.exports.loop = function() {
@@ -42,8 +46,8 @@ module.exports.loop = function() {
 
 Javascript example:
 ```javascript
-var ScreepsStats = require('screeps-stats')
-global.Stats = new ScreepsStats()
+var stats = require('screeps-stats')
+global.Stats = new stats.ScreepsStats()
 
 module.exports.loop = function () {
 
