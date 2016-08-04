@@ -42,7 +42,7 @@ module.exports.loop = function() {
 
 Javascript example:
 ```javascript
-var ScreepsStats = require('screepsstats')
+var ScreepsStats = require('screeps-stats')
 global.Stats = new ScreepsStats()
 
 module.exports.loop = function () {
