@@ -14,9 +14,8 @@ for up to 20 ticks, at which point the oldest data will be removed.
 
 ## Authors
 
-Original Javascript version by Robert Hafner <tedivm@tedivm.com>
-TypeScript port by Erik Davidson <erik@erikd.org>
-
+* Original Javascript version by Robert Hafner <tedivm@tedivm.com>
+* TypeScript port by Erik Davidson <erik@erikd.org>
 
 ## Installation
 

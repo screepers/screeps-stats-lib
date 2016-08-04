@@ -1,6 +1,6 @@
 {
   "name": "screeps-stats",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Script to enhance stats collection for screeps-stats",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
