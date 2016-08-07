@@ -21,22 +21,25 @@ var ScreepsStats = (function () {
     };
     ScreepsStats.prototype.addStat = function (key, value) {
         var keySplit = key.split(".");
-        if (keySplit.length === 1) {
-            Memory.___screeps_stats[Game.time][keySplit[0]] = value;
+        if (!keySplit.length) {
             return;
         }
-        var start = Memory.___screeps_stats[Game.time][keySplit[0]];
-        var tmp = {};
+        if (!Memory.___screeps_stats[Game.time]) {
+            Memory.___screeps_stats[Game.time] = {};
+        }
+        var tick = Memory.___screeps_stats[Game.time];
+        var curSpot = tick;
         for (var idx = 0, n = keySplit.length; idx < n; idx++) {
             if (idx === (n - 1)) {
-                tmp[keySplit[idx]] = value;
+                curSpot[keySplit[idx]] = value;
             }
             else {
-                tmp[keySplit[idx]] = {};
-                tmp = tmp[keySplit[idx]];
+                if (!curSpot[keySplit[idx]]) {
+                    curSpot[keySplit[idx]] = {};
+                }
+                curSpot = curSpot[keySplit[idx]];
             }
         }
-        _.merge(start = Memory.___screeps_stats[Game.time], tmp);
     };
     ScreepsStats.prototype.runBuiltinStats = function () {
         var _this = this;
@@ -146,7 +149,7 @@ var ScreepsStats = (function () {
                 room: spawn.room.name,
             };
         });
-        Memory.___screeps_stats[Game.time] = stats;
+        _.merge(Memory.___screeps_stats[Game.time], stats);
     };
     ScreepsStats.prototype.roomExpensive = function (stats, room) {
         _.defaults(stats, {
