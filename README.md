@@ -26,7 +26,7 @@ npm install --save screeps-stats
 
 ## Usage
 
-A note about the examples below: It's important for the `ScreepsStats` class to get assigned to `global.State`, as the stats collection
+A note about the examples below: It's important for the `ScreepsStats` class to get assigned to `global.Stats`, as the stats collection
 server will use this class to delete ticks that it has finished processing.
 
 TypeScript example:
